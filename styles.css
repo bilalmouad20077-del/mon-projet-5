@@ -252,7 +252,10 @@ nav {
   position: relative;
   isolation: isolate;
   padding: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
 }
+
 
 .product__card::before {
   position: absolute;
@@ -659,4 +662,27 @@ nav {
 
 .close:hover {
   color: #000;
+}
+
+
+
+/* FIX PRODUCT CARD ON MOBILE */
+@media (max-width: 768px) {
+  .product__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product__card {
+    padding: 1.5rem;
+  }
+
+  .product__card::before {
+    height: 100%; /* توحيد الخلفية */
+  }
+
+  .product__card img {
+    max-width: 100%;
+    height: 140px;
+    object-fit: contain;
+  }
 }
